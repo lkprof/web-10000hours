@@ -1,0 +1,12 @@
+$def with (post)
+
+<h1>$post.name</h1><small>($post.email)</small><br/>
+<h2>目标的进度列表：</h2>
+<span>您总共投入了: <span class="highlight">1255</span>&nbsp; &nbsp;天</span>
+<span>总共投入 <span class="highlight">139</span>&nbsp; &nbsp; 小时</span> 
+<span>guji还需要 <span class="highlight">972</span>&nbsp; &nbsp; 天，才能完成</span> 
+<ol>
+	$for post in posts:
+	<li>$post.posted_on &nbsp;&nbsp; $post.spend_time_everyday</li>
+</ol>
+$datestr(post.posted_on)<br/>
