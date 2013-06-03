@@ -1,12 +1,13 @@
-$def with (posts)
+$def with (index_show)
+<h1>10000hours</h1>
 
-<h1>Blog posts</h1>
-
-<ul>
-$for show in index_show:
-    <li>
-        <a href="/view/$post.id">$post.title</a> 
-        from $datestr(post.posted_on) 
-        <a href="/edit/$post.id">Edit</a>
-    </li>
-</ul>s
+ Welcome $cookie().get('username')!
+<a href="/logout">Logout</a>
+<a href="/newsubject">新建一个10000hours项目</a>
+<ol>
+    $for show in index_show:
+        <li>
+            <a href="/viewsubject/$show.subject_id">$show.title</a>
+            on $show.posted_on spend $show.spend_time hours
+        </li>
+</ol>
